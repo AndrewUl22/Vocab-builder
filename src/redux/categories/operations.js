@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../../services/api';
 
-// GET /words/categories
 export const fetchCategories = createAsyncThunk(
   'categories/fetchAll',
   async (_, thunkAPI) => {

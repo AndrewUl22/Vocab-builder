@@ -31,49 +31,14 @@ function App() {
 
   return (
     <Routes>
-      <Route
-        path="/register"
-        element={
-          <RestrictedRoute>
-            <RegisterPage />
-          </RestrictedRoute>
-        }
-      />
-      <Route
-        path="/login"
-        element={
-          <RestrictedRoute>
-            <LoginPage />
-          </RestrictedRoute>
-        }
-      />
+      <Route path="/register" element={<RestrictedRoute><RegisterPage /></RestrictedRoute>} />
+      <Route path="/login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
 
       <Route path="/" element={<Layout />}>
         <Route index element={<Navigate to="/dictionary" replace />} />
-        <Route
-          path="dictionary"
-          element={
-            <PrivateRoute>
-              <DictionaryPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="recommend"
-          element={
-            <PrivateRoute>
-              <RecommendPage />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="training"
-          element={
-            <PrivateRoute>
-              <TrainingPage />
-            </PrivateRoute>
-          }
-        />
+        <Route path="dictionary" element={<PrivateRoute><DictionaryPage /></PrivateRoute>} />
+        <Route path="recommend" element={<PrivateRoute><RecommendPage /></PrivateRoute>} />
+        <Route path="training" element={<PrivateRoute><TrainingPage /></PrivateRoute>} />
       </Route>
 
       <Route path="*" element={<Navigate to="/dictionary" replace />} />

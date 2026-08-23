@@ -1,0 +1,23 @@
+:root {
+  --color-bg-page: #f8f8f8;
+  --color-card-bg: rgba(133, 170, 159, 0.1);
+  --color-green: #85aa9f;
+  --color-green-hover: #79a096;
+  --color-text: #121417;
+  --color-text-secondary: rgba(18, 20, 23, 0.8);
+  --color-text-muted: rgba(18, 20, 23, 0.5);
+  --color-white: #fcfcfc;
+  --color-border-input: rgba(18, 20, 23, 0.1);
+  --color-border-input-focus: #85aa9f;
+  --color-error: #d80027;
+  --color-success: #3cbf61;
+
+  --font-display: 'MacPaw Fixel Display', 'Inter', system-ui, sans-serif;
+
+  --radius-card: 30px;
+  --radius-input: 15px;
+  --radius-button: 30px;
+
+  --bp-tablet: 768px;
+  --bp-desktop: 1440px;
+}

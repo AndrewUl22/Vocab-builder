@@ -1,120 +1,16 @@
-\# VocabBuilder
+# React + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
+Currently, two official plugins are available:
 
-React web app to build, browse and train your personal English vocabulary with interactive word training sessions.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
+## React Compiler
 
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-\## Overview
+## Expanding the Oxlint configuration
 
-
-
-VocabBuilder lets an authenticated user:
-
-
-
-\- keep a personal dictionary of English words with progress tracking
-
-\- browse and filter words by category and keyword
-
-\- discover words added by other users (Recommend page) and add them to their own dictionary
-
-\- practice learned words through interactive training sessions with a progress bar and results summary
-
-
-
-\## Tech stack
-
-
-
-\- \*\*React 19\*\* + \*\*Vite\*\*
-
-\- \*\*React Router\*\* — public/private routing
-
-\- \*\*Redux Toolkit\*\* + \*\*redux-persist\*\* — global state, auth token persisted across sessions
-
-\- \*\*Axios\*\* — API client with auth header interceptor
-
-\- \*\*React Hook Form\*\* + \*\*Yup\*\* — form state and validation
-
-\- \*\*React Toastify\*\* — error/success notifications
-
-\- \*\*MUI\*\* — progress bar and popover components
-
-
-
-\## Backend
-
-
-
-Public API docs: https://vocab-builder-backend.p.goit.global/api-docs/
-
-
-
-\## Project structure
-
-
-
-```
-
-src/
-
-&#x20; components/     # shared/reusable UI (Layout, PrivateRoute, RestrictedRoute, modals, etc.)
-
-&#x20; hooks/          # useDebounce, useAuth
-
-&#x20; pages/          # route-level pages (Register, Login, Dictionary, Recommend, Training)
-
-&#x20; redux/          # auth / categories / words slices + async thunks
-
-&#x20; schemas/        # Yup validation schemas
-
-&#x20; services/       # axios instance
-
-&#x20; styles/         # global styles
-
-```
-
-
-
-\## Getting started
-
-
-
-```bash
-
-npm install
-
-npm run dev
-
-```
-
-
-
-App runs at `http://localhost:5173` by default.
-
-
-
-\### Build
-
-
-
-```bash
-
-npm run build
-
-```
-
-
-
-\## Responsive breakpoints
-
-
-
-\- mobile: 320px (fluid) / 375px (adaptive)
-
-\- tablet: 768px+
-
-\- desktop: 1440px+
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.

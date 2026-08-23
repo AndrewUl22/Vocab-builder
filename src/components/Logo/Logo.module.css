@@ -1,0 +1,31 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.mark {
+  flex: none;
+  display: flex;
+  line-height: 0;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 32px;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 767px) {
+  .mark svg {
+    width: 36px;
+    height: 36px;
+  }
+  .text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
