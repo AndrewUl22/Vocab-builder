@@ -1,10 +1,11 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import Header from '../Header/Header';
 
 const Layout = () => {
   return (
     <>
-      <header>{/* Header: Logo, UserNav, UserBar — next stage */}</header>
+      <Header />
       <main>
         <Suspense fallback={<div>Завантаження...</div>}>
           <Outlet />

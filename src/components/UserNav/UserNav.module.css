@@ -1,0 +1,55 @@
+.nav {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.link {
+  display: block;
+  padding: 12px 4px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-text);
+  border-radius: 8px;
+  transition: color 0.15s ease;
+}
+
+.active {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+@media (min-width: 1440px) {
+  .list {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .link {
+    padding: 4px 0;
+    font-size: 16px;
+    line-height: 24px;
+    position: relative;
+  }
+
+  .link:hover {
+    color: var(--color-green);
+  }
+
+  .active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--color-green);
+  }
+}
