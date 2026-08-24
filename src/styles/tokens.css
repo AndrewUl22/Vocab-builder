@@ -12,7 +12,8 @@
   --color-error: #d80027;
   --color-success: #3cbf61;
 
-  --font-display: 'MacPaw Fixel Display', 'Inter', system-ui, sans-serif;
+  --font-display: 'Fixel Display', 'Inter', system-ui, sans-serif;
+  --font-text: 'Fixel Text', 'Inter', system-ui, sans-serif;
 
   --radius-card: 30px;
   --radius-input: 15px;

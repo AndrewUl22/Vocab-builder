@@ -12,6 +12,7 @@
 }
 
 .text {
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: 22px;
   line-height: 32px;
