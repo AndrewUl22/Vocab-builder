@@ -1,0 +1,53 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-input);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.trainLink {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.trainLink:hover {
+  color: var(--color-green-hover);
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    padding: 24px;
+  }
+
+  .actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1440px) {
+  .dashboard {
+    padding: 32px 40px;
+  }
+}

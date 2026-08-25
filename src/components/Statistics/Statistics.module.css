@@ -1,0 +1,33 @@
+.stats {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--radius-input);
+  background: var(--color-card-bg);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .stats {
+    gap: 32px;
+  }
+}

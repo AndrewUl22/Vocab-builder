@@ -7,7 +7,7 @@ export const registerSchema = Yup.object({
   name: Yup.string().trim().required("Ім'я обов'язкове"),
   email: Yup.string().matches(EMAIL_PATTERN, 'Некоректний email').required("Email обов'язковий"),
   password: Yup.string()
-    .matches(PASSWORD_PATTERN, 'Пароль має містити мінімум 6 літер та 1 цифру, 7+ символів')
+    .matches(PASSWORD_PATTERN, 'Пароль має містити рівно 7 символів: 6 латинських літер поспіль та щонайменше 1 цифру')
     .required("Пароль обов'язковий"),
 });
 

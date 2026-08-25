@@ -1,9 +1,9 @@
 import styles from './Button.module.css';
 
-const Button = ({ variant = 'primary', isLoading, children, ...rest }) => {
+const Button = ({ variant = 'primary', isLoading, fullWidth = true, className = '', children, ...rest }) => {
   return (
     <button
-      className={`${styles.btn} ${variant === 'outline' ? styles.outline : ''}`}
+      className={`${styles.btn} ${variant === 'outline' ? styles.outline : ''} ${fullWidth ? '' : styles.auto} ${className}`}
       disabled={isLoading || rest.disabled}
       {...rest}
     >

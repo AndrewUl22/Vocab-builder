@@ -28,6 +28,13 @@
   color: var(--color-green);
 }
 
+.auto {
+  width: auto;
+  height: 44px;
+  padding: 0 24px;
+  font-size: 15px;
+}
+
 @media (min-width: 768px) {
   .btn {
     height: 60px;

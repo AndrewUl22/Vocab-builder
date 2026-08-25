@@ -1,0 +1,107 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.searchField {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-input);
+  background: var(--color-white);
+  transition: border-color 0.15s ease;
+}
+
+.searchField:focus-within {
+  border-color: var(--color-border-input-focus);
+}
+
+.searchIcon {
+  flex: none;
+  margin-left: 16px;
+  color: var(--color-text-secondary);
+}
+
+.searchInput {
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.categoryGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.select {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-input);
+  background: var(--color-white);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-border-input-focus);
+}
+
+.radioGroup {
+  display: flex;
+  gap: 20px;
+  padding-left: 4px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.radioLabel input {
+  accent-color: var(--color-green);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .searchField {
+    flex: 1 1 240px;
+  }
+
+  .categoryGroup {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .select {
+    width: 200px;
+  }
+}

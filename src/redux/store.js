@@ -6,12 +6,14 @@ import storage from 'redux-persist/es/storage';
 
 import { authReducer } from './auth/slice';
 import { categoriesReducer } from './categories/slice';
+import { wordsReducer } from './words/slice';
 
 const authPersistConfig = { key: 'auth', storage, whitelist: ['token'] };
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   categories: categoriesReducer,
+  words: wordsReducer,
 });
 
 export const store = configureStore({

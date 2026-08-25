@@ -1,11 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance, setAuthHeader, clearAuthHeader } from '../../services/api';
 
+// Confirmed against the live Swagger docs (Auth tag):
+// POST /users/signup -> 201 { email, name, token }
+// POST /users/signin -> 200 { email, name, token }
+// GET  /users/current -> 200 { _id, name, email, token }
+// POST /users/signout -> 200 { message }
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await instance.post('/users/register', credentials);
+      const { data } = await instance.post('/users/signup', credentials);
       setAuthHeader(data.token);
       return data;
     } catch (error) {
@@ -16,7 +21,7 @@ export const register = createAsyncThunk(
 
 export const logIn = createAsyncThunk('auth/login', async (credentials, thunkAPI) => {
   try {
-    const { data } = await instance.post('/users/login', credentials);
+    const { data } = await instance.post('/users/signin', credentials);
     setAuthHeader(data.token);
     return data;
   } catch (error) {
@@ -26,7 +31,7 @@ export const logIn = createAsyncThunk('auth/login', async (credentials, thunkAPI
 
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await instance.post('/users/logout');
+    await instance.post('/users/signout');
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response?.data?.message || error.message);
