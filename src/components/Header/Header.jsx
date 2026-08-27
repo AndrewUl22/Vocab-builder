@@ -33,7 +33,6 @@ const Header = () => {
 
         <UserNav className={styles.desktopNav} />
         <UserBar className={styles.desktopUserBar} />
-
         <button
           type="button"
           className={styles.burgerBtn}
@@ -62,7 +61,7 @@ const Header = () => {
             </div>
 
             <UserNav onNavigate={closeMenu} />
-            <UserBar onLogout={closeMenu} />
+            <UserBar onLogout={closeMenu} onNavigate={closeMenu} />
           </div>
         </div>
       )}
