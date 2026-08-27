@@ -13,16 +13,14 @@ const Statistics = () => {
     dispatch(fetchStatistics());
   }, [dispatch]);
 
-  // API only returns totalCount, no separate learned count
+  // api only returns totalCount, no separate learned count
   const totalCount = statistics?.totalCount ?? '—';
 
   return (
-    <dl className={styles.stats} aria-busy={isLoading}>
-      <div className={styles.item}>
-        <dt className={styles.label}>Words to learn</dt>
-        <dd className={styles.value}>{isLoading ? '…' : totalCount}</dd>
-      </div>
-    </dl>
+    <p className={styles.stats} aria-busy={isLoading}>
+      <span className={styles.label}>To study:</span>
+      <span className={styles.value}>{isLoading ? '…' : totalCount}</span>
+    </p>
   );
 };
 

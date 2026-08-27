@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/slice';
 import { logOut } from '../../redux/auth/operations';
-import { UserIcon, LogoutIcon } from '../icons/MenuIcons';
+import { UserIcon, ArrowRightIcon } from '../icons/MenuIcons';
 import styles from './UserBar.module.css';
 
 const UserBar = ({ onLogout, onNavigate, className = '' }) => {
@@ -26,9 +26,9 @@ const UserBar = ({ onLogout, onNavigate, className = '' }) => {
           <span className={styles.email}>{user?.email}</span>
         </span>
       </Link>
-      <button type="button" className={styles.logoutBtn} onClick={handleLogout} aria-label="Log out">
-        <LogoutIcon />
-        <span className={styles.logoutText}>Log out</span>
+      <button type="button" className={styles.logoutBtn} onClick={handleLogout}>
+        Log out
+        <ArrowRightIcon />
       </button>
     </div>
   );

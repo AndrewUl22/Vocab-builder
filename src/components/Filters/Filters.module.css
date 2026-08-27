@@ -54,6 +54,7 @@
   font-family: inherit;
   font-size: 15px;
   color: var(--color-text);
+  text-transform: capitalize;
   cursor: pointer;
 }
 

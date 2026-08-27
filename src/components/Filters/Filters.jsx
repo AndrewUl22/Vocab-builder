@@ -46,7 +46,7 @@ const Filters = () => {
           onChange={handleCategoryChange}
           aria-label="Category"
         >
-          <option value="">All categories</option>
+          <option value="">Categories</option>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}

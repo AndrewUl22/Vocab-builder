@@ -25,3 +25,31 @@
   font-size: 12px;
   color: var(--color-text-secondary);
 }
+
+.circleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.percentText {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.ring {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: conic-gradient(var(--color-green) var(--percent, 0%), var(--color-border-input) 0);
+  position: relative;
+}
+
+.ring::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--color-white);
+}

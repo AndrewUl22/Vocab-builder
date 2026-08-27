@@ -10,46 +10,33 @@
 
 .link {
   display: block;
-  padding: 12px 4px;
+  padding: 10px 16px;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-button);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.link:hover {
   color: var(--color-text);
-  border-radius: 8px;
-  transition: color 0.15s ease;
 }
 
 .active {
-  color: var(--color-green);
-  font-weight: 700;
+  background: var(--color-green);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.active:hover {
+  color: var(--color-white);
 }
 
 @media (min-width: 1440px) {
   .list {
     flex-direction: row;
     align-items: center;
-    gap: 32px;
-  }
-
-  .link {
-    padding: 4px 0;
-    font-size: 16px;
-    line-height: 24px;
-    position: relative;
-  }
-
-  .link:hover {
-    color: var(--color-green);
-  }
-
-  .active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -6px;
-    height: 2px;
-    border-radius: 1px;
-    background: var(--color-green);
+    gap: 4px;
   }
 }

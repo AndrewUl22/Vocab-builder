@@ -1,33 +1,18 @@
 .stats {
   display: flex;
-  gap: 24px;
+  align-items: baseline;
+  gap: 6px;
   margin: 0;
-  padding: 12px 16px;
-  border-radius: var(--radius-input);
-  background: var(--color-card-bg);
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
 }
 
 .label {
-  font-size: 12px;
+  font-size: 15px;
   color: var(--color-text-secondary);
 }
 
 .value {
-  margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--color-text);
-}
-
-@media (min-width: 768px) {
-  .stats {
-    gap: 32px;
-  }
 }

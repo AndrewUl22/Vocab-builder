@@ -1,6 +1,7 @@
 import ProgressBar from '../ProgressBar/ProgressBar';
 import ActionsMenu from '../ActionsMenu/ActionsMenu';
-import Button from '../Button/Button';
+import { ArrowRightIcon } from '../icons/MenuIcons';
+import { UkFlagIcon, UaFlagIcon } from '../icons/FlagIcons';
 import styles from './WordsTable.module.css';
 
 // Used on both Dictionary page (mode dictionary, shows Edit/Delete) and
@@ -15,8 +16,16 @@ const WordsTable = ({ words, mode = 'dictionary', onEdit, onDelete, onAddToDicti
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>En</th>
-            <th>Ua</th>
+            <th>
+              <span className={styles.headerLabel}>
+                Word <UkFlagIcon />
+              </span>
+            </th>
+            <th>
+              <span className={styles.headerLabel}>
+                Translation <UaFlagIcon />
+              </span>
+            </th>
             <th>Category</th>
             <th>Progress</th>
             <th aria-label="Actions" />
@@ -35,14 +44,14 @@ const WordsTable = ({ words, mode = 'dictionary', onEdit, onDelete, onAddToDicti
                 {mode === 'dictionary' ? (
                   <ActionsMenu onEdit={() => onEdit(word)} onDelete={() => onDelete(word.id)} />
                 ) : (
-                  <Button
+                  <button
                     type="button"
-                    fullWidth={false}
-                    variant="outline"
+                    className={styles.addToDictionaryBtn}
                     onClick={() => onAddToDictionary(word.id)}
                   >
                     Add to dictionary
-                  </Button>
+                    <ArrowRightIcon />
+                  </button>
                 )}
               </td>
             </tr>

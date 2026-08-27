@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Filters from '../Filters/Filters';
 import Statistics from '../Statistics/Statistics';
-import Button from '../Button/Button';
+import { PlusIcon, ArrowRightIcon } from '../icons/MenuIcons';
 import styles from './Dashboard.module.css';
 
 // Used on both Dictionary and Recommend pages. Add word button only
@@ -16,12 +16,14 @@ const Dashboard = ({ onAddWord }) => {
 
         <div className={styles.buttons}>
           {onAddWord && (
-            <Button type="button" fullWidth={false} onClick={onAddWord}>
+            <button type="button" className={styles.addWordBtn} onClick={onAddWord}>
               Add word
-            </Button>
+              <PlusIcon />
+            </button>
           )}
           <Link to="/training" className={styles.trainLink}>
             Train oneself
+            <ArrowRightIcon />
           </Link>
         </div>
       </div>

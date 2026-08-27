@@ -17,6 +17,18 @@ export const UserIcon = (props) => (
   </svg>
 );
 
+export const PlusIcon = (props) => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...props}>
+    <path d="M8 2v12M2 8h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+  </svg>
+);
+
+export const ArrowRightIcon = (props) => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" {...props}>
+    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export const SearchIcon = (props) => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
     <circle cx="9" cy="9" r="6.5" stroke="currentColor" strokeWidth="1.5" />

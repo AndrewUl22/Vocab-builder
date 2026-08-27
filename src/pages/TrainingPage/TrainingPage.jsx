@@ -91,7 +91,12 @@ const TrainingPage = () => {
 
   return (
     <div className={styles.page}>
-      <ProgressBar value={answers.length} max={tasks.length} label={`${answers.length}/${tasks.length}`} />
+      <ProgressBar
+        variant="bar"
+        value={answers.length}
+        max={tasks.length}
+        label={`${answers.length}/${tasks.length}`}
+      />
 
       <form className={styles.form} onSubmit={handleSave}>
         <TrainingRoom task={currentTask} value={inputValue} onChange={setInputValue} />
