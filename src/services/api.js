@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Confirmed via Swagger "Try it out": the real base path includes /api
-// (not shown in the route list itself, but present in the executed request).
+// backend base url needs the /api prefix, found this out from the
+// curl output in Swagger, it is not shown in the route list itself
 export const instance = axios.create({
   baseURL: 'https://vocab-builder-backend.p.goit.global/api',
 });

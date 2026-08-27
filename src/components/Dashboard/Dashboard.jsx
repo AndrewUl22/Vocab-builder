@@ -4,11 +4,8 @@ import Statistics from '../Statistics/Statistics';
 import Button from '../Button/Button';
 import styles from './Dashboard.module.css';
 
-/**
- * Universal Dashboard used on both Dictionary page (/dictionary) and
- * Recommend page (/recommend). The "Add word" button only makes sense on
- * the Dictionary page, so it's opt-in via `onAddWord`.
- */
+// Used on both Dictionary and Recommend pages. Add word button only
+// makes sense on Dictionary, so it only shows up when onAddWord is passed.
 const Dashboard = ({ onAddWord }) => {
   return (
     <section className={styles.dashboard}>

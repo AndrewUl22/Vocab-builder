@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance, setAuthHeader, clearAuthHeader } from '../../services/api';
 
-// Confirmed against the live Swagger docs (Auth tag):
-// POST /users/signup -> 201 { email, name, token }
-// POST /users/signin -> 200 { email, name, token }
-// GET  /users/current -> 200 { _id, name, email, token }
-// POST /users/signout -> 200 { message }
+// real endpoints from Swagger, Auth tag:
+// signup returns 201 with email, name, token
+// signin returns 200 with email, name, token
+// current returns 200 with id, name, email, token
+// signout returns 200 with a message
 export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {

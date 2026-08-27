@@ -13,8 +13,7 @@ const Statistics = () => {
     dispatch(fetchStatistics());
   }, [dispatch]);
 
-  // Confirmed against the live Swagger docs: GET /words/statistics returns
-  // only { totalCount }.
+  // API only returns totalCount, no separate learned count
   const totalCount = statistics?.totalCount ?? '—';
 
   return (

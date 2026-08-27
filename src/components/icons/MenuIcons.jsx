@@ -24,6 +24,26 @@ export const SearchIcon = (props) => (
   </svg>
 );
 
+export const DotsIcon = (props) => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
+    <circle cx="4" cy="10" r="1.6" fill="currentColor" />
+    <circle cx="10" cy="10" r="1.6" fill="currentColor" />
+    <circle cx="16" cy="10" r="1.6" fill="currentColor" />
+  </svg>
+);
+
+export const EditIcon = (props) => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" {...props}>
+    <path d="M11.5 2.5l4 4L6 16l-4.5 1L2.5 12.5l9-10z" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const TrashIcon = (props) => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" {...props}>
+    <path d="M3 5h12M7 5V3.5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1V5m-7.5 0 .7 9.1a1.5 1.5 0 0 0 1.5 1.4h4.6a1.5 1.5 0 0 0 1.5-1.4L14.5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 export const LogoutIcon = (props) => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" {...props}>
     <path d="M8 17.5H4.5a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 4.5 2.5H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

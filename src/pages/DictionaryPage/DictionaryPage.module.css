@@ -13,6 +13,13 @@
   font-size: 14px;
 }
 
+.loading {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
 @media (min-width: 768px) {
   .page {
     padding: 24px 32px;
