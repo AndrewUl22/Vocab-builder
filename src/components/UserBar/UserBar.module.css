@@ -93,8 +93,14 @@
     gap: 16px;
   }
 
+  .profileLink {
+    flex: none;
+  }
+
   .info {
-    max-width: 140px;
+    flex: none;
+    min-width: 0;
+    max-width: none;
   }
 
   .email {

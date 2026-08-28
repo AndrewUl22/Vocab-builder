@@ -87,6 +87,10 @@
     display: flex;
   }
 
+  .desktopUserBar {
+    flex: none;
+  }
+
   .burgerBtn {
     display: none;
   }

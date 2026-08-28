@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { fetchTasks, submitAnswers } from '../../redux/words/operations';
-import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import TrainingRoom from '../../components/TrainingRoom/TrainingRoom';
 import WellDoneModal from '../../components/WellDoneModal/WellDoneModal';
 import Button from '../../components/Button/Button';
@@ -78,37 +77,47 @@ const TrainingPage = () => {
   if (tasks.length === 0) {
     return (
       <div className={styles.empty}>
-        <p>You do not have any words to train yet.</p>
-        <Link to="/dictionary" onClick={goToDictionaryWithAddWord} className={styles.addWordLink}>
-          Add word
-        </Link>
+        <p className={styles.emptyTitle}>You don't have a single word to learn right now.</p>
+        <p className={styles.emptyText}>
+          Please create or add a word to start the workout. We want to improve your
+          vocabulary and develop your knowledge, so please share the words you are
+          interested in adding to your study.
+        </p>
+        <div className={styles.emptyActions}>
+          <Button type="button" fullWidth={false} onClick={goToDictionaryWithAddWord}>
+            Add word
+          </Button>
+          <Button type="button" fullWidth={false} variant="outline" onClick={() => navigate('/dictionary')}>
+            Cancel
+          </Button>
+        </div>
       </div>
     );
   }
 
   const currentTask = tasks[currentIndex];
   const isLastTask = currentIndex === tasks.length - 1;
+  const remaining = tasks.length - currentIndex;
 
   return (
     <div className={styles.page}>
-      <ProgressBar
-        variant="bar"
-        value={answers.length}
-        max={tasks.length}
-        label={`${answers.length}/${tasks.length}`}
-      />
+      <span className={styles.counter}>{remaining}</span>
 
       <form className={styles.form} onSubmit={handleSave}>
-        <TrainingRoom task={currentTask} value={inputValue} onChange={setInputValue} />
+        <TrainingRoom
+          task={currentTask}
+          value={inputValue}
+          onChange={setInputValue}
+          onNext={handleNext}
+          showNext={!isLastTask}
+        />
 
         <div className={styles.actions}>
-          {!isLastTask && (
-            <Button type="button" fullWidth={false} variant="outline" onClick={handleNext}>
-              Next
-            </Button>
-          )}
           <Button type="submit" fullWidth={false} isLoading={isSaving}>
             Save
+          </Button>
+          <Button type="button" fullWidth={false} variant="outline" onClick={() => navigate('/dictionary')}>
+            Cancel
           </Button>
         </div>
       </form>
