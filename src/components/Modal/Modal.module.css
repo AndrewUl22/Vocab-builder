@@ -21,11 +21,15 @@
   box-sizing: border-box;
 }
 
+.green {
+  background: var(--color-green);
+}
+
 .header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .title {
@@ -34,6 +38,21 @@
   font-weight: 700;
   color: var(--color-text);
   margin: 0;
+}
+
+.green .title {
+  color: var(--color-white);
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+.green .subtitle {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .closeBtn {
@@ -48,6 +67,10 @@
   background: transparent;
   color: var(--color-text-secondary);
   cursor: pointer;
+}
+
+.green .closeBtn {
+  color: var(--color-white);
 }
 
 @media (min-width: 768px) {

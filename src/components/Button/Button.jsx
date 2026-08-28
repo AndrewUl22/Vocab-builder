@@ -1,9 +1,23 @@
 import styles from './Button.module.css';
 
-const Button = ({ variant = 'primary', isLoading, fullWidth = true, className = '', children, ...rest }) => {
+const Button = ({
+  variant = 'primary',
+  isLoading,
+  fullWidth = true,
+  onGreen = false,
+  className = '',
+  children,
+  ...rest
+}) => {
+  const greenClass = onGreen
+    ? variant === 'outline'
+      ? styles.onGreenOutline
+      : styles.onGreenPrimary
+    : '';
+
   return (
     <button
-      className={`${styles.btn} ${variant === 'outline' ? styles.outline : ''} ${fullWidth ? '' : styles.auto} ${className}`}
+      className={`${styles.btn} ${variant === 'outline' ? styles.outline : ''} ${greenClass} ${fullWidth ? '' : styles.auto} ${className}`}
       disabled={isLoading || rest.disabled}
       {...rest}
     >

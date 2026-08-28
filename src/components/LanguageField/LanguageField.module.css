@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: var(--radius-input);
+  background: var(--color-white);
+}
+
+.fieldError {
+  outline: 2px solid var(--color-error);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.flag {
+  flex: none;
+  margin-left: 12px;
+  border-radius: 2px;
+}
+
+.errorText {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-error);
+}

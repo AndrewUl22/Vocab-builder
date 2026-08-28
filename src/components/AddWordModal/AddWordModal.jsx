@@ -27,7 +27,12 @@ const AddWordModal = ({ onClose }) => {
   };
 
   return (
-    <Modal title="Add word" onClose={onClose}>
+    <Modal
+      title="Add word"
+      subtitle="Adding a new word to the dictionary is an important step in enriching the language base and expanding the vocabulary."
+      tone="green"
+      onClose={onClose}
+    >
       <AddWordForm onSubmit={handleSubmit} onCancel={onClose} isSubmitting={isSubmitting} />
     </Modal>
   );

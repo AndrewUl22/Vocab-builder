@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { editWordSchema } from '../../schemas/validationSchemas';
-import FormField from '../FormField/FormField';
+import LanguageField from '../LanguageField/LanguageField';
 import Button from '../Button/Button';
 import styles from './WordForm.module.css';
 
@@ -18,14 +18,14 @@ const EditWordForm = ({ word, onSubmit, onCancel, isSubmitting }) => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
-      <FormField label="En" error={errors.en?.message} {...register('en')} />
-      <FormField label="Ua" error={errors.ua?.message} {...register('ua')} />
+      <LanguageField lang="ua" placeholder="Ukrainian translation" error={errors.ua?.message} {...register('ua')} />
+      <LanguageField lang="en" placeholder="English word" error={errors.en?.message} {...register('en')} />
 
       <div className={styles.actions}>
-        <Button type="submit" fullWidth={false} isLoading={isSubmitting}>
+        <Button type="submit" fullWidth={false} onGreen isLoading={isSubmitting}>
           Save
         </Button>
-        <Button type="button" fullWidth={false} variant="outline" onClick={onCancel}>
+        <Button type="button" fullWidth={false} variant="outline" onGreen onClick={onCancel}>
           Cancel
         </Button>
       </div>

@@ -23,7 +23,7 @@ const EditWordModal = ({ word, onClose }) => {
   };
 
   return (
-    <Modal title="Edit word" onClose={onClose}>
+    <Modal title="Edit word" tone="green" onClose={onClose}>
       <EditWordForm word={word} onSubmit={handleSubmit} onCancel={onClose} isSubmitting={isSubmitting} />
     </Modal>
   );

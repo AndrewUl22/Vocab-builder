@@ -28,6 +28,26 @@
   color: var(--color-green);
 }
 
+.onGreenPrimary {
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.onGreenPrimary:hover:not(:disabled) {
+  background: var(--color-white);
+  opacity: 0.9;
+}
+
+.onGreenOutline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--color-white);
+}
+
+.onGreenOutline:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .auto {
   width: auto;
   height: 44px;

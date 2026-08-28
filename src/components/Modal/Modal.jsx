@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { CloseIcon } from '../icons/MenuIcons';
 import styles from './Modal.module.css';
 
-const Modal = ({ title, onClose, children }) => {
+const Modal = ({ title, subtitle, tone = 'light', onClose, children }) => {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') onClose();
@@ -18,7 +18,7 @@ const Modal = ({ title, onClose, children }) => {
   return (
     <div className={styles.backdrop} onClick={onClose}>
       <div
-        className={styles.modal}
+        className={`${styles.modal} ${tone === 'green' ? styles.green : ''}`}
         role="dialog"
         aria-modal="true"
         aria-label={title}
@@ -30,6 +30,7 @@ const Modal = ({ title, onClose, children }) => {
             <CloseIcon />
           </button>
         </div>
+        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {children}
       </div>
     </div>
