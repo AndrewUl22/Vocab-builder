@@ -22,8 +22,9 @@ function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(refreshUser());
-    dispatch(fetchCategories());
+    dispatch(refreshUser()).finally(() => {
+      dispatch(fetchCategories());
+    });
   }, [dispatch]);
 
   if (isRefreshing) {

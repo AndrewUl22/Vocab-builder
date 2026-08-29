@@ -111,7 +111,6 @@
     border-radius: var(--radius-input);
     background: var(--color-white);
     border: 1px solid var(--color-border-input);
-    overflow: hidden;
   }
 
   .table td {
