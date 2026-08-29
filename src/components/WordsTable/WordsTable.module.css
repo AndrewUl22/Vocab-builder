@@ -81,3 +81,65 @@
 .addToDictionaryBtn:hover {
   color: var(--color-green-hover);
 }
+
+@media (max-width: 639px) {
+  .tableWrapper {
+    overflow-x: visible;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .table {
+    min-width: 0;
+  }
+
+  .table,
+  .table thead,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    margin-bottom: 12px;
+    border-radius: var(--radius-input);
+    background: var(--color-white);
+    border: 1px solid var(--color-border-input);
+    overflow: hidden;
+  }
+
+  .table td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    text-align: right;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-input);
+  }
+
+  .table tr:last-child td:last-child,
+  .table td:last-child {
+    border-bottom: none;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    flex: none;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+  }
+
+  .actionsCell {
+    justify-content: flex-end;
+  }
+}

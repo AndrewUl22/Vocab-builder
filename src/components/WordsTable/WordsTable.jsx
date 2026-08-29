@@ -34,13 +34,13 @@ const WordsTable = ({ words, mode = 'dictionary', onEdit, onDelete, onAddToDicti
         <tbody>
           {words.map((word) => (
             <tr key={word.id}>
-              <td>{word.en}</td>
-              <td>{word.ua}</td>
-              <td className={styles.category}>{word.category}</td>
-              <td>
+              <td data-label="Word">{word.en}</td>
+              <td data-label="Translation">{word.ua}</td>
+              <td data-label="Category" className={styles.category}>{word.category}</td>
+              <td data-label="Progress">
                 <ProgressBar value={word.progress ?? 0} max={100} />
               </td>
-              <td className={styles.actionsCell}>
+              <td data-label="" className={styles.actionsCell}>
                 {mode === 'dictionary' ? (
                   <ActionsMenu onEdit={() => onEdit(word)} onDelete={() => onDelete(word.id)} />
                 ) : (
