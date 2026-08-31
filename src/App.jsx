@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { refreshUser } from './redux/auth/operations';
 import { fetchCategories } from './redux/categories/operations';
-import { selectIsRefreshing } from './redux/auth/slice';
+import { selectIsRefreshing, selectIsLoggedIn } from './redux/auth/slice';
 
 import Layout from './components/Layout/Layout';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -20,12 +20,21 @@ const ProfilePage = lazy(() => import('./pages/ProfilePage/ProfilePage'));
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
-    dispatch(refreshUser()).finally(() => {
-      dispatch(fetchCategories());
-    });
+    dispatch(refreshUser());
   }, [dispatch]);
+
+  // fires every time the user actually becomes authenticated: after a
+  // successful refresh on reload, or right after login/register. this
+  // way the categories request always has the auth header set, and it
+  // does not get stuck empty if the first attempt happened while logged out
+  useEffect(() => {
+    if (isLoggedIn) {
+      dispatch(fetchCategories());
+    }
+  }, [dispatch, isLoggedIn]);
 
   if (isRefreshing) {
     return <div>Перевірка автентифікації...</div>;

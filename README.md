@@ -1,16 +1,69 @@
-# React + Vite
+# 📚 VocabBuilder
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A vocabulary-learning app: build your personal dictionary, discover words other users have added, and train yourself with interactive quizzes.
 
-Currently, two official plugins are available:
+**Live demo:** [vocab-builder-weld.vercel.app](https://vocab-builder-weld.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-2-764ABC?logo=redux&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔐 **Authentication** — register, log in, and stay signed in across visits (JWT, persisted in local storage)
+- 📖 **Dictionary** — a personal word list with search, category filters, and per-word learning progress
+- 🌍 **Recommend** — browse words added by other users and add the ones you like to your own dictionary
+- 🎯 **Training** — practice your words with a translation quiz and see your results at the end
+- 👤 **Profile** — a quick overview of your account and recently added words
+- 📱 **Responsive** — adapts from a 320px phone screen up through tablet and desktop layouts
 
-## Expanding the Oxlint configuration
+## 🛠 Tech stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **React 19** + **Vite** — UI and build tooling
+- **Redux Toolkit** — global state (auth, categories, words) with `redux-persist` for session persistence
+- **React Router** — routing, with private/restricted route guards
+- **React Hook Form** + **Yup** — form handling and validation
+- **Axios** — API client
+- **React Toastify** — notifications
+- CSS Modules — component-scoped styling, no UI framework
+
+## 🚀 Getting started
+
+```bash
+git clone <this-repo>
+cd vocab-builder
+npm install
+npm run dev
+```
+
+The app runs on `http://localhost:5173` by default.
+
+### Available scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the local dev server with hot reload |
+| `npm run build` | Build for production into `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run Oxlint |
+
+## 🔌 Backend
+
+The app talks to a REST API for auth, words, categories, and training. The base URL is configured in `src/services/api.js`.
+
+## 📁 Project structure
+
+```
+src/
+├── components/     # reusable UI pieces (Header, WordsTable, Modal, forms, icons...)
+├── pages/          # route-level pages (Dictionary, Recommend, Training, Profile, auth)
+├── redux/          # Redux Toolkit slices and thunks (auth, categories, words)
+├── schemas/        # Yup validation schemas
+├── hooks/          # custom hooks
+├── styles/         # design tokens, fonts, global styles
+└── services/       # API client setup
+```
+
+## 📄 License
+
+This project was built as a learning exercise and is not licensed for commercial use.
